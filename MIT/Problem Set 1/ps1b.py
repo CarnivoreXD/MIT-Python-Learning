@@ -32,7 +32,7 @@ def main():
 			monthly_salary = portion_saved * (starting_salary/12)
 			
 
-	print(f"The number of months it will take to save {down_payment_needed}  is  {number_of_months}")
+	print(f"The number of months it will take to save {down_payment_needed}  is  {number_of_months} and you will have {current_savings}")
 
 	
 
