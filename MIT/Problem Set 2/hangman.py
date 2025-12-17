@@ -134,16 +134,17 @@ def hangman(secret_word):
     Follows the other limitations detailed in the problem write-up.
     '''
     
-    print(f"Welcome to Hangman your word has {len(secret_word)} words!")
+    print(f"Welcome to Hangman your word has {len(secret_word)} letters!")
     guesses = 6
     letter_guessed_list = list()
 
     while guesses > 0:
-        print(f"You currently have {guesses} guesses!")
+        print(f"You currently have {guesses} guesses and you haven't used are {get_available_letters(letter_guessed_list)}")
+      
 
-        letter_guessed = input("Please enter a word: ")
+        letter_guessed = input("Please enter a letter: ")
 
-        while (not letter_guessed.isalpha() and len(letter_guessed) == 1) :
+        while (not letter_guessed.isalpha() or len(letter_guessed) != 1):
             letter_guessed = input("Please enter a valid letter: ")
 
         letter_guessed_list.append(letter_guessed)
@@ -245,7 +246,7 @@ if __name__ == "__main__":
     # To test part 2, comment out the pass line above and
     # uncomment the following two lines.
     
-    secret_word = 'hello'
+    secret_word = choose_word(wordlist)
     hangman(secret_word)
 
 ###############
